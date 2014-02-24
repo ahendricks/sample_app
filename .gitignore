@@ -17,3 +17,9 @@
 
 # Ignore 
 /.secret
+*.swp
+*~
+.project
+.DS_Store
+.idea
+bundler_stubs/
