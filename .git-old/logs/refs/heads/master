@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 fc843aeb50772b3684dfa9886ebe17bde73295a1 Alex Hendricks <alex@hendricksmail.com> 1392787871 -0800	commit (initial): Initial commit
+fc843aeb50772b3684dfa9886ebe17bde73295a1 70e03d6c78f8669abb7d1b5a377c42d3aa782410 Alex Hendricks <alex@hendricksmail.com> 1392788087 -0800	commit: Improve the README
+70e03d6c78f8669abb7d1b5a377c42d3aa782410 dd244cd49132d37dc417f80883e3f64e2c634296 Alex Hendricks <alex@hendricksmail.com> 1392788290 -0800	commit: Add secret token to .gitignore
+dd244cd49132d37dc417f80883e3f64e2c634296 2548779fc3f68ce99c92721d7d96174676244eb0 Alex Hendricks <alex@hendricksmail.com> 1392874186 -0800	merge static-pages: Fast-forward
+2548779fc3f68ce99c92721d7d96174676244eb0 6df7edcf69a1a8ff02e4063c53a75206889c48e3 Alex Hendricks <alex@hendricksmail.com> 1392874739 -0800	commit: Add contact page test
+6df7edcf69a1a8ff02e4063c53a75206889c48e3 927330d271dd2b074acce07a3872ae509905a866 Alex Hendricks <alex@hendricksmail.com> 1392875311 -0800	commit: Add contact page
+927330d271dd2b074acce07a3872ae509905a866 dc5cdd33a43b5c9c2086b6af3b17c4edd8236a7e Alex Hendricks <alex@hendricksmail.com> 1393263590 -0800	commit: Modify static pages test to use base_title
+dc5cdd33a43b5c9c2086b6af3b17c4edd8236a7e 5cfea2d9ec4f088ca599dfd2255f0fb8c18010c2 Alex Hendricks <alex@hendricksmail.com> 1393265295 -0800	commit: Add guard for rspec
+5cfea2d9ec4f088ca599dfd2255f0fb8c18010c2 7d7dd01e801f71a6c3cad6561b47ea6169453578 Alex Hendricks <alex@hendricksmail.com> 1393480280 -0800	commit: Configure advance test suite
+7d7dd01e801f71a6c3cad6561b47ea6169453578 3dea77bd5a7434288c211f464f958e0eb2b4e780 Alex Hendricks <alex@hendricksmail.com> 1393486977 -0800	commit: Add full_title helper
+3dea77bd5a7434288c211f464f958e0eb2b4e780 9259d7b847ec461800a3a573d15b0976c39d89f0 Alex Hendricks <alex@hendricksmail.com> 1393808643 -0800	merge filling-in-layout: Fast-forward
+9259d7b847ec461800a3a573d15b0976c39d89f0 9a556a37f15da8c04f80228662d5894384157e7b Alex Hendricks <alex@hendricksmail.com> 1393811816 -0800	commit: Finish Chap 5 exercises
