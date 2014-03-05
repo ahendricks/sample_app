@@ -48,7 +48,7 @@ describe "Static pages" do
 		it_should_behave_like "all static pages"
 
 	end
-
+ 
 	it "should have the right links in the layout" do
 		visit root_path
 		click_link "About"
