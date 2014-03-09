@@ -17,8 +17,8 @@ describe "UserPages" do
 
 		before { visit user_path(user) }
 
+		it { should have_title(user.name) }
 		it { should have_content(user.name) }
-		it { should have_selector('h1', user.name) }
 	end
 
 	describe "signup" do
@@ -39,8 +39,8 @@ describe "UserPages" do
 
 		describe "with valid information" do
 			before do
-				fill_in "Name", with: "Example User"
-				fill_in "Email", with: "example@email.com"
+				fill_in "Name", with: "Alex Hendricks"
+				fill_in "Email", with: "alex@hendricksmail.com"
 				fill_in "Password", with: "foobar"
 				fill_in "Confirmation", with: "foobar"
 			end
@@ -51,7 +51,7 @@ describe "UserPages" do
 
 			describe "after saving the user" do
 				before { click_button submit }
-				let(:user) { User.find_by(email: "example@email.com") }
+				let(:user) { User.find_by(email: "alex@hendricksmail.com") }
 
 				it { should have_title(user.name) }
 				it { should have_selector('div.alert.alert-success', text: 'Welcome') }
