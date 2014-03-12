@@ -14,6 +14,7 @@ describe "Authentication" do
 		before { visit signin_path }
 
 		describe "with invalid information" do
+			let(:user) { FactoryGirl.create(:user) }
 			before { click_button "Sign in" }
 
 			it { should have_title('Sign in') }
@@ -23,6 +24,8 @@ describe "Authentication" do
 				before { click_link "Home" }
 
 				it { should_not have_selector('div.alert.alert-error') }
+				it { should_not have_link('Profile', href: user_path(user)) }
+				it { should_not have_link('Settings', href: edit_user_path(user)) }
 			end
 		end
 
@@ -65,6 +68,22 @@ describe "Authentication" do
 
 					it "should render the desired protected page" do
 						expect(page).to have_title("Edit user")
+					end
+
+					describe "when signing in again" do
+						
+						before do
+							click_link "Sign out"
+							visit signin_path
+							fill_in "Email", with: user.email
+							fill_in "Password", with: user.password
+							click_button "Sign in"
+						end
+
+						it "should render the defaul (profile) page" do
+							expect(page).to have_title(user.name)
+						end
+
 					end
 				end
 			end
@@ -113,6 +132,38 @@ describe "Authentication" do
 
 			describe "submitting a DELETE request to the Users#destroy action" do
 				before { delete user_path(user) }
+				specify { expect(response).to redirect_to(root_url) }
+			end
+		end
+
+		describe "as an admin user" do
+			let(:admin) { FactoryGirl.create(:admin) }
+			let(:admin2) { FactoryGirl.create(:admin) }
+			before { sign_in admin, no_capybara: true }
+
+			describe "submitting a DELETE request to Users#destroy on an admin" do
+				let(:user_count_before) { User.count }
+				let(:user_count_after) { User.count }
+				before do 
+					delete user_path(admin2)
+					user_count_after = User.count
+				end
+				specify { expect(response).to redirect_to(users_url) }
+				specify { expect(user_count_after).to eq(user_count_before ) }
+			end
+		end
+
+		describe "as a signed in user" do
+			let(:user) { FactoryGirl.create(:user) }
+			before { sign_in user, no_capybara: true }
+
+			describe "submitting a GET request to the Users#new action" do
+				before { get new_user_path }
+				specify { expect(response).to redirect_to(root_url) }
+			end
+
+			describe "submitting a POST request to the Users#create action" do
+				before { post users_path, user: user.attributes }
 				specify { expect(response).to redirect_to(root_url) }
 			end
 		end
